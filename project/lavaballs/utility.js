@@ -38,9 +38,9 @@ export function messages(type) {
         'you died',
         'that\'s embarrassing',
         'are you really trying your best?',
-        'you\'re not a gamer, right?',
         'maybe, this wasn\'t your thing',
-        'do something else, you\'re embarrassing yourself'
+        'you\'re embarrassing yourself',
+        'you are not good at this'
         ];
 
         if (type === 'died') {
