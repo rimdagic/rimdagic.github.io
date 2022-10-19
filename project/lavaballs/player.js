@@ -1,4 +1,4 @@
-import { Entity, context } from './entity.js';
+import { Entity, context, canvas } from './entity.js';
 import { game } from './game.js';
 
 export class Player extends Entity {
@@ -9,15 +9,15 @@ export class Player extends Entity {
 
     draw() {
         context.fillStyle = 'rgb(75, 175, 75)';
-        context.fillRect(this.position.x, this.position.y, this.size, this.size);
+        context.fillRect(this.position.x - this.size / 2, this.position.y - this.size / 2, this.size, this.size);
     }
 
-    move() {
-        if (game.key.left === true){
-            this.position.x -= this.velocity.dx;
+    move(deltaTime) {
+        if (game.key.left === true && this.position.x > this.size / 2){
+            this.position.x -= this.velocity.dx * deltaTime;
         }
-        else if (game.key.right === true){
-            this.position.x += this.velocity.dx;
+        else if (game.key.right === true && this.position.x < canvas.width - this.size / 2){
+            this.position.x += this.velocity.dx * deltaTime;
         }
     }
 }

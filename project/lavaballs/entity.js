@@ -1,6 +1,7 @@
+import { Position, Velocity } from './component.js';
+
 export let canvas = document.getElementById('canvas');
 export let context = canvas.getContext('2d');
-import { Position, Velocity } from './component.js';
 
 export class Entity {
     constructor(x, y, dx, dy) {
@@ -8,11 +9,10 @@ export class Entity {
         this.velocity = new Velocity(dx, dy);
     }
 
-    move() {
+    move(deltaTime) {
         this.position.x += this.velocity.dx;
-        this.position.y += this.velocity.dy;
+        this.position.y += this.velocity.dy * deltaTime;
     }
 
     draw() {}
 }
-
