@@ -1,8 +1,8 @@
 let canvas = document.getElementById('canvas');
 let context = canvas.getContext('2d');
+let looping = false;
+let entities = [];
 
-context.fillStyle = 'rgb(255, 255, 255)'
-context.fillRect(canvas.width / 2 - 10, canvas.height / 2 - 10, 40, 40);
 
 class Position {
     constructor(x, y) {
@@ -23,7 +23,11 @@ class Entities {
         this.position = new Position(x, y);
         this.velocity = new Velocity(dx, dy);
     }
-    move() {}
+    move() {
+        this.position.x += this.velocity.dx;
+        this.position.y += this.velocity.dy;
+    }
+
     draw() {}
 }
 
@@ -46,29 +50,40 @@ class LavaBall extends Entities {
         context.fill();
     }
 
-    move() {
-        this.position.x += this.velocity.x;
-        this.position.y += this.velocity.y;
-    }
+
 }
 
 class Player extends Entities {
     constructor(x, y, dx, dy, size) {
         super(x, y, dx, dy)
-        size = this.size;
+        this.size = size;
     }
 
     draw() {
-        context.fillStyle = 'rgb(255, 255, 255)';
+        context.fillStyle = 'rgb(75, 255, 75)';
         context.fillRect(this.position.x, this.position.y, this.size, this.size);
-        console.log('DRAWING PLAYER')
     }
 }
 
 
-let lavaBall = new LavaBall(100, 400, 10, 10, 20);
-lavaBall.draw();
+let lavaBall = new LavaBall(100, 400, 0, -1, 20);
+let player = new Player(100, canvas.height - canvas.height * 0.2, 0, 0, 30);
 
-let player = new Player(100, 200, 10, 10, 40);
-console.log(lavaBall);
-player.draw();
+
+
+function tick() {
+
+    context.fillStyle = 'rgb(0, 0, 0)';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    player.move();
+    lavaBall.move();
+    lavaBall.draw();
+    player.draw();
+
+    if (looping) {
+        requestAnimationFrame(tick);
+    }
+}
+
+tick()
