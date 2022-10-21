@@ -1,9 +1,14 @@
-import { experience } from './experience.js';
-
-experience.start();
-
-/*
+let canvas = document.getElementById('canvas');
+let context = canvas.getContext('2d');
 let stars = [];
+let tickCount = 0;
+let tickLooping = true;
+let width = canvas.width;
+let height = canvas.height;
+let halfWidth = canvas.width / 2;
+let halfHeight = canvas.height / 2;
+let origo = {x: halfWidth, y: halfHeight}
+let slope = 0;
 let key = {
     left : false,
     right : false,
@@ -11,7 +16,56 @@ let key = {
     down : false
 }
 
+class Position {
+    constructor(){
+        this.x = Math.random() * width,
+        this.y = Math.random() * height
 
+        if (this.x > halfWidth && this.y < halfHeight){
+            this.quadrant = 1;
+        } else if (this.x < halfWidth && this.y < halfHeight){
+            this.quadrant = 2;
+        } else if (this.x < halfWidth && this.y > halfHeight){
+            this.quadrant = 3;
+        } else if (this.x > halfWidth && this.y > halfHeight){
+            this.quadrant = 4;
+        }
+    }
+}
+
+class Velocity {
+    constructor (position){
+
+        let slopeNeg = slope - 1;
+        let slopePos = slope + 1;
+
+        if (position.quadrant === 2) {
+            this.x = 1  /slopePos *- 1 * deltaTime//Negativt
+            this.y = slope  /slopePos *- 1 * deltaTime//Negativt
+            //Left up
+
+
+        } else if (position.quadrant === 1) {
+            this.x = 1 / slopeNeg  *-1 *deltaTime//Positivt
+            this.y = slope / slopeNeg *-1*deltaTime// Negativt
+            // Right top
+
+
+        } else if (position.quadrant === 4) {
+            this.x = 1  /slopePos*deltaTime// Positivt
+            this.y = slope /slopePos*deltaTime// Positivt
+            //Right down
+
+
+        } else if (position.quadrant === 3){
+            this.x = 1  /slopeNeg*deltaTime//Negativt
+            this.y = slope / slopeNeg*deltaTime//Positivt
+            //Left down
+
+        }
+
+    }
+}
 
 
 class Star {
@@ -119,6 +173,7 @@ function calculateSlope(position){
     let deltaY = position.y - origo.y;
     let deltaX = position.x - origo.x;
     slope = deltaY / deltaX;
+
 }
 
 
@@ -193,4 +248,3 @@ function tick(){
 }
 
 tick();
-*/
