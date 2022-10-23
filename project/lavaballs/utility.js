@@ -35,7 +35,7 @@ export function messages(type) {
         'you are throwing your lives away',
         'oh no, you hit the lethal lava',
         'you died',
-        'com on, you can do better',
+        'come on, you can do better',
         ];
 
         if (type === 'died') {
