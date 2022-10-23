@@ -33,14 +33,9 @@ export function playerBallCollision(player, lavaBall) {
 export function messages(type) {
     let died = [
         'you are throwing your lives away',
-        'don\'t you care about the lethal lava?',
-        'you\'re not even trying',
+        'oh no, you hit the lethal lava',
         'you died',
-        'that\'s embarrassing',
-        'are you really trying your best?',
-        'maybe, this wasn\'t your thing',
-        'you\'re embarrassing yourself',
-        'you are not good at this'
+        'com on, you can do better',
         ];
 
         if (type === 'died') {
