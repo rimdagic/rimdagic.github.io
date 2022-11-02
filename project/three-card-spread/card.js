@@ -71,9 +71,9 @@ export function giveChoosenCardsPositions(choosenCards) {
 
 export function isChoosenCardClicked(clickPoint, num) {
     if (clickPoint.x > choosenCards[num].position.x && 
-        clickPoint.x < choosenCards[num].position.x + choosenCards[num].size.w &&
+        clickPoint.x < choosenCards[num].position.x + choosenCards[num].size.w * 2 &&
         clickPoint.y > choosenCards[num].position.y && 
-        clickPoint.y < choosenCards[num].position.y + choosenCards[num].size.h)
+        clickPoint.y < choosenCards[num].position.y + choosenCards[num].size.h * 2 )
     {
         return true;
     }

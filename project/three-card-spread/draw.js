@@ -51,9 +51,8 @@ export function drawSecondTitle(choosenCards) {
     for (let i = 0; i < choosenCards.length; i++) {
         let card = choosenCards[i];
 
-        context.strokeRect(card.position.x, card.position.y, card.size.w, card.size.h);
-        context.fillRect(card.position.x, card.position.y, card.size.w, card.size.h);
-        
+        context.strokeRect(card.position.x, card.position.y, card.size.w * 2, card.size.h * 2);
+        context.fillRect(card.position.x, card.position.y, card.size.w * 2, card.size.h * 2);
     }
 
     messageNumber ++;
@@ -61,14 +60,29 @@ export function drawSecondTitle(choosenCards) {
 
 export function turnChoosenCard(index) {
     context.fillStyle = 'rgb(200,200,200)';
-    context.fillRect(choosenCards[index].position.x, choosenCards[index].position.y, choosenCards[index].size.w, choosenCards[index].size.h)
+    context.fillRect(
+        choosenCards[index].position.x, 
+        choosenCards[index].position.y, 
+        choosenCards[index].size.w, 
+        choosenCards[index].size.h
+        );
+
     context.font = '20px serif';
-    context.fillText(choosenCards[index].type, choosenCards[index].position.x, choosenCards[index].position.y + 120)
+    context.fillText(
+        choosenCards[index].type, 
+        choosenCards[index].position.x, 
+        choosenCards[index].position.y + 220
+    );
 
 
     let image = new Image();
     image.onload = function() {
-    context.drawImage(image, choosenCards[index].position.x, choosenCards[index].position.y, choosenCards[index].size.w, choosenCards[index].size.h);
+    context.drawImage(
+        image, 
+        choosenCards[index].position.x, 
+        choosenCards[index].position.y, 
+        choosenCards[index].size.w * 2, 
+        choosenCards[index].size.h * 2);
     };
     image.src = choosenCards[index].imagePath;
     
