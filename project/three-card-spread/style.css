@@ -1,0 +1,15 @@
+#container {
+    text-align: center;
+}
+
+h1 {
+    color:rgb(29, 29, 29);
+}
+
+canvas {
+    border: 1px dotted rgb(0, 0, 0);
+}
+
+body {
+    background-color: rgb(94, 60, 60);
+}
