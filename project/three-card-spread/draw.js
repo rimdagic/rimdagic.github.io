@@ -6,7 +6,7 @@ let messages = [
     'Choose a card to represent the past',
     'Choose a card that represents the present',
     'Choose a card that will represent the future',
-    'Turn the card of the past',
+    'Turn the cards from the left to the right',
     'Turn the card of the present',
     'Turn the card of the future'
 ]
@@ -62,7 +62,16 @@ export function drawSecondTitle(choosenCards) {
 export function turnChoosenCard(index) {
     context.fillStyle = 'rgb(200,200,200)';
     context.fillRect(choosenCards[index].position.x, choosenCards[index].position.y, choosenCards[index].size.w, choosenCards[index].size.h)
+    context.font = '20px serif';
     context.fillText(choosenCards[index].type, choosenCards[index].position.x, choosenCards[index].position.y + 120)
+
+
+    let image = new Image();
+    image.onload = function() {
+    context.drawImage(image, choosenCards[index].position.x, choosenCards[index].position.y, choosenCards[index].size.w, choosenCards[index].size.h);
+    };
+    image.src = choosenCards[index].imagePath;
+    
 }
 
 export function presentResult() {

@@ -1,5 +1,9 @@
+export let img = [];
+
+//rider-waite
 export const cardNames = [
 
+    'the fool',
     'the magician',
     'the high priestess',
     'the empress',
@@ -21,7 +25,6 @@ export const cardNames = [
     'the sun',
     'judgement',
     'the world',
-    'the fool',
 
     'ace of wands',
     'two of wands',

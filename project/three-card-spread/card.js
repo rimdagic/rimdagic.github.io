@@ -4,10 +4,12 @@ import { canvas, tarotDeck } from "./experience.js";
 export let choosenCards = [];
 
 export class Card {
-    constructor (type, x, y, width, height) {
+    constructor (type, x, y, width, height, img) {
         this.type = type;
         this.size = new Size(width, height);
         this.position = new Position(x, y);
+        this.imagePath = img;
+        
     }
 }
 

@@ -68,7 +68,7 @@ export function click(event) {
         case 7:
             if (isChoosenCardClicked(clickPoint, 2)){
                 turnChoosenCard(2)
-                presentResult();
+                //presentResult();
                 stage ++;
             }
             break;
