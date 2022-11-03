@@ -13,11 +13,3 @@ canvas {
 body {
     background-color: rgb(94, 60, 60);
 }
-
-
-@media only screen and (max-width: 700px) {
-    canvas {
-        width: 100%;
-        height: 100%;
-    }
-}
