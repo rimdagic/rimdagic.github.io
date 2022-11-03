@@ -67,7 +67,8 @@ export function turnChoosenCard(index) {
         choosenCards[index].size.h * 2
         );
 
-    context.font = '20px serif';
+    context.fillStyle = 'rgb(230,230,230)'
+    context.font = '12px castellar';
     context.fillText(
         choosenCards[index].type, 
         choosenCards[index].position.x, 
