@@ -3,10 +3,10 @@ import { context, canvas, tarotDeck } from './experience.js'
 
 let messageNumber = 0;
 let messages = [
-    'Choose a card to represent the past',
-    'Choose a card that represents the present',
-    'Choose a card that will represent the future',
-    'Turn the cards from the left to the right',
+    'Choose your card of the past',
+    'Choose your card of present',
+    'Choose your card of the future',
+    'Look at the cards, start from the left',
     'Turn the card of the present',
     'Turn the card of the future'
 ]
@@ -14,7 +14,7 @@ let messages = [
 export function drawTitleScreen() {
     context.fillStyle = 'rgb(100, 31, 31)';
     context.fillRect(0, 0, canvas.width, canvas.height)
-    context.fillStyle = 'rgb(0,0,0)';
+    context.fillStyle = 'rgb(150,150,150)';
     context.font = '38px serif';
     context.fillText('Think of a question or an area of your life', 20, canvas.height / 2);
 }
@@ -32,7 +32,7 @@ export function drawChoice() {
         context.fillRect(card.position.x, card.position.y, card.size.w, card.size.h);
     }
 
-    context.fillStyle = 'rgb(200, 200, 200)'
+    context.fillStyle = 'rgb(150,150,150)'
     context.font = '38px serif';
     context.fillText(messages[messageNumber], 30, canvas.height * 0.09);
     messageNumber ++;
@@ -41,7 +41,7 @@ export function drawChoice() {
 export function drawSecondTitle(choosenCards) {
     context.fillStyle = 'rgb(100, 31, 31)';
     context.fillRect(0, 0, canvas.width, canvas.height)
-    context.fillStyle = 'rgb(0,0,0)';
+    context.fillStyle = 'rgb(150,150,150)';
     context.font = '38px serif';
     context.fillText(messages[messageNumber], 30, canvas.height * 0.09);
     context.strokeStyle = 'rgb(200, 200, 200)';
@@ -59,12 +59,12 @@ export function drawSecondTitle(choosenCards) {
 }
 
 export function turnChoosenCard(index) {
-    context.fillStyle = 'rgb(200,200,200)';
+    context.fillStyle = 'rgb(20,20,20)';
     context.fillRect(
         choosenCards[index].position.x, 
         choosenCards[index].position.y, 
-        choosenCards[index].size.w, 
-        choosenCards[index].size.h
+        choosenCards[index].size.w * 2, 
+        choosenCards[index].size.h * 2
         );
 
     context.font = '20px serif';

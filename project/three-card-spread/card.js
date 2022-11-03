@@ -60,8 +60,6 @@ export function removeCardPositions() {
 }
 
 export function giveChoosenCardsPositions(choosenCards) {
-
-    console.log(choosenCards.length)
     for (let i = 0; i < choosenCards.length; i++){
         let card = choosenCards[i];
         card.position.x = 250 * i + 50;

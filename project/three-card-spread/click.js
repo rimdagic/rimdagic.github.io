@@ -2,10 +2,10 @@ import { drawChoice, drawSecondTitle, turnChoosenCard, presentResult } from "./d
 import { giveCardsPositions, removeCardPositions, isCardClicked, choosenCards, giveChoosenCardsPositions, isChoosenCardClicked } from "./card.js"
 import { tarotDeck } from "./experience.js"
 let stage = 1;
-const rect = canvas.getBoundingClientRect();
+
 
 export function click(event) {
-
+    let rect = canvas.getBoundingClientRect();
     let clickPoint = {
         x: event.clientX - rect.left,
         y: event.clientY - rect.top
@@ -25,8 +25,8 @@ export function click(event) {
                 choosenCards.push(firstCard);
                 stage ++;
                 drawChoice();
-                console.log(choosenCards)
             }
+
             break;
         
         case 3:
@@ -35,8 +35,8 @@ export function click(event) {
                 choosenCards.push(secondCard);
                 stage ++;
                 drawChoice();
-                console.log(choosenCards)
             }
+
             break;
 
         case 4:
@@ -48,14 +48,15 @@ export function click(event) {
                 giveChoosenCardsPositions(choosenCards);
                 drawSecondTitle(choosenCards);
             }
+
             break;
 
         case 5:
             if (isChoosenCardClicked(clickPoint, 0)){
                 turnChoosenCard(0)
                 stage ++;
-                console.log(stage)
             }
+
             break;
 
         case 6:
@@ -63,6 +64,7 @@ export function click(event) {
                 turnChoosenCard(1)
                 stage ++;
             }
+
             break;
         
         case 7:
@@ -71,6 +73,11 @@ export function click(event) {
                 //presentResult();
                 stage ++;
             }
+
+            break;
+
+        case 8:
+
             break;
     }
 }

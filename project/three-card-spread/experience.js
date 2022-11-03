@@ -6,7 +6,7 @@ export let canvas = document.getElementById('canvas');
 export let context = canvas.getContext('2d');
 export let tarotDeck = [];
 
-//generate image pathways
+//generate image pathways for all 78 cards
 for (let i = 0; i < 78; i++) {
     img.push(`img/${i}.png`)
 }
@@ -19,6 +19,6 @@ for (let i = 0; i < cardNames.length; i++) {
 
 //shuffle the cards
 tarotDeck = shuffleCards(tarotDeck);
-
 console.log(tarotDeck)
+
 drawTitleScreen();
