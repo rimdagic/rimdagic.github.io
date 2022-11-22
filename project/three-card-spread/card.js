@@ -14,9 +14,10 @@ export class Card {
 }
 
 export function shuffleCards(theCards) {
+    let initialLength = theCards.length;
     let shuffledCards = [];
 
-    for (let i = 0; i < 78; i++){
+    for (let i = 0; i < initialLength; i++){
         let random = Math.floor(Math.random() * theCards.length);
         shuffledCards.push(theCards[random]);
         theCards.splice(random, 1);
