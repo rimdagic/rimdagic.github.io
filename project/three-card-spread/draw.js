@@ -59,7 +59,7 @@ export function drawSecondTitle(choosenCards) {
 }
 
 export function turnChoosenCard(index) {
-    context.fillStyle = 'rgb(20,20,20)';
+    context.fillStyle = 'rgb(100,31,31)';
     context.fillRect(
         choosenCards[index].position.x, 
         choosenCards[index].position.y, 
