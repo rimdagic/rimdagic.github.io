@@ -4,11 +4,9 @@ import { context, canvas, tarotDeck } from './experience.js'
 let messageNumber = 0;
 let messages = [
     'Choose your card of the past',
-    'Choose your card of present',
+    'Choose your card of the present',
     'Choose your card of the future',
-    'Look at the cards, start from the left',
-    'Turn the card of the present',
-    'Turn the card of the future'
+    'Look at the cards, start from the left'
 ]
 
 export function drawTitleScreen() {
