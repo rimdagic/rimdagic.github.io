@@ -11,5 +11,7 @@ canvas {
 }
 
 body {
-    background-color: rgb(94, 60, 60);
+    background-color: rgb(77, 57, 57);
+    color:rgb(44, 36, 36);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
