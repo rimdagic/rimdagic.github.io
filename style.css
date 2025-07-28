@@ -1,6 +1,6 @@
 body {
-    background-color: rgb(77, 57, 57);
-    color:rgb(44, 36, 36);
+    background-color: rgb(25, 2, 9);
+    color:rgb(200, 100, 100);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -11,7 +11,7 @@ body {
     border: 1px dotted darkgray;
     padding: 10px;
   
-    background-color: rgb(121, 65, 65);
+    background-color: rgb(2, 2, 9);
 }
 
 h1 {
