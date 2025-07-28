@@ -1,0 +1,34 @@
+html
+{
+    background-color: white;
+    align-items: center;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+#page{
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    border: 5px black solid;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+table{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: larger;
+    font-size: xx-large;
+}
+
+td{
+    border: 2px black solid;
+    height: max-content;
+    width: 100px;
+
+}
+
+@media print {
+    #newPage {page-break-after: always;}
+  }
